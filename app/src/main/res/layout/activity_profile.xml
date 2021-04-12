@@ -1,29 +1,292 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
+    android:onClick="EditProButtonOnClick"
     tools:context=".Profile">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/profilePictureID"
+            android:layout_width="180dp"
+            android:layout_height="178dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="15dp"
+            android:background="#322F2F"
+            android:scaleX="1"
+            android:scaleY="1"
+            app:layout_constraintBottom_toTopOf="@+id/NameId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainLogoId"
+            app:srcCompat="@drawable/ic_profilepic"
+            tools:srcCompat="@drawable/ic_profilepic" />
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/home_toolbar" />
+
+        <ImageView
+            android:id="@+id/mainLogoId"
+            android:layout_width="296dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="3dp"
+            android:scaleX=".7"
+            android:scaleY=".7"
+            app:layout_constraintBottom_toTopOf="@+id/profilePictureID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include"
+            app:srcCompat="@drawable/voluncharityimage"
+            tools:srcCompat="@drawable/voluncharityimage" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="117dp"
+            android:layout_height="128dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="8dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.331"
+            app:srcCompat="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/levelImageId"
+            android:layout_width="117dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="4dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.348"
+            app:srcCompat="@drawable/circle" />
+
+        <TextView
+            android:id="@+id/pointTextId"
+            android:layout_width="67dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:scaleX="1.1"
+            android:scaleY="1.1"
+            android:text="10 Points"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintHorizontal_bias="0.315"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.384" />
+
+        <TextView
+            android:id="@+id/levelTextId"
+            android:layout_width="77dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="12dp"
+            android:scaleX="1.1"
+            android:scaleY="1.1"
+            android:text="Level 8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profilePictureID"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.38" />
+
+        <Button
+            android:id="@+id/nextEventId"
+            android:layout_width="308dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="62dp"
+            android:onClick="NextEventOnClick"
+            android:text="Next Event"
+            app:backgroundTint="#656161"
+            app:layout_constraintBottom_toTopOf="@+id/eventHistoryId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/NameId" />
+
+        <Button
+            android:id="@+id/donHisId"
+            android:layout_width="308dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginEnd="62dp"
+            android:layout_marginBottom="80dp"
+            android:onClick="DonationHistoryOnClick"
+            android:text="Donation History"
+            app:backgroundTint="#656161"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/FavOrgId" />
+
+        <Button
+            android:id="@+id/FavOrgId"
+            android:layout_width="308dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginEnd="62dp"
+            android:onClick="FavOrgOnClick"
+            android:text="Favorite Organization"
+            app:backgroundTint="#656161"
+            app:layout_constraintBottom_toTopOf="@+id/donHisId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventHistoryId" />
+
+        <Button
+            android:id="@+id/eventHistoryId"
+            android:layout_width="308dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="62dp"
+            android:onClick="EventHistoryOnClick"
+            android:text="Event History"
+            app:backgroundTint="#656161"
+            app:layout_constraintBottom_toTopOf="@+id/FavOrgId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nextEventId" />
+
+        <Button
+            android:id="@+id/storeId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:onClick="StoreOnClick"
+            android:text="Store"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rewardsId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/donHisId" />
+
+        <Button
+            android:id="@+id/rewardsId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:onClick="RewardsOnClick"
+            android:text="Rewards"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/logoutId"
+            app:layout_constraintStart_toEndOf="@+id/storeId"
+            app:layout_constraintTop_toBottomOf="@+id/donHisId" />
+
+        <Button
+            android:id="@+id/logoutId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="71dp"
+            android:layout_marginBottom="7dp"
+            android:onClick="LogoutOnClick"
+            android:text="Log Out"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rewardsId"
+            app:layout_constraintTop_toBottomOf="@+id/donHisId" />
+
+        <Button
+            android:id="@+id/editProButtonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="4dp"
+            android:onClick="EditProButtonOnClick"
+            android:text="Edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editNameId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:editable="false"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.427"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profilePictureID" />
+
+        <TextView
+            android:id="@+id/NameId"
+            android:layout_width="295dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="47dp"
+            android:layout_marginBottom="340dp"
+            android:clickable="false"
+            android:gravity="left"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            android:text="Tony Stark"
+            android:textColor="#000000"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profilePictureID" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="62dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="5dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:text="Name:"
+            android:textColor="#020202"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/editNameId"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.505" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-
-        <include
-            layout="@layout/home_toolbar"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Profile Page"
-            android:textSize="50dp"
-            android:textStyle="bold"
-            android:gravity="center"/>
 
 
     </LinearLayout>
@@ -34,8 +297,7 @@
         android:layout_gravity="start"
         android:background="@android:color/background_light">
 
-        <include
-            layout="@layout/home_nav_drawer"/>
+        <include layout="@layout/home_nav_drawer" />
 
     </RelativeLayout>
 
