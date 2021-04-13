@@ -86,7 +86,8 @@ public class Profile extends AppCompatActivity {
 
     public void LogoutOnClick(View view){
         System.out.println("Inside Log out Click Button");
-        directActivity(this,LoginFragment.class);
+        //directActivity(this,LoginFragment.class);
+        HomePageActivity.logout(this);
     }
 
 

@@ -37,6 +37,7 @@
             android:layout_height="100dp"
             android:layout_marginVertical="170dp"
             android:layout_marginHorizontal="5dp"
+            android:onClick="CarWashClick"
             android:src="@drawable/ic_carevent"/>
 
     </LinearLayout>
