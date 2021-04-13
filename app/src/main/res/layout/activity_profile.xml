@@ -26,8 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mainLogoId"
             app:srcCompat="@drawable/ic_profilepic"
-            tools:srcCompat="@drawable/ic_profilepic"
-            tools:ignore="VectorDrawableCompat" />
+            tools:srcCompat="@drawable/ic_profilepic" />
 
         <include
             android:id="@+id/include"
