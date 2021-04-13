@@ -6,9 +6,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.os.Bundle;
 import android.view.View;
 
+
 public class Settings extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,4 +51,6 @@ public class Settings extends AppCompatActivity {
 
         HomePageActivity.closeMenu(drawerLayout);
     }
+
+
 }

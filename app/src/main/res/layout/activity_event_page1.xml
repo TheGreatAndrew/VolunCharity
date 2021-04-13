@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    tools:context=".Settings">
+    tools:context=".EventPage1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -43,14 +43,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/description_Text"
             android:layout_width="330dp"
             android:layout_height="350dp"
             android:layout_marginBottom="24dp"
             android:layout_marginEnd="41dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
-            android:text="TextView"
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:text="This Event is hosted by UTSA\n This Car Wash Event Work to support for Children what is Fighting Cancer\n location:  1 UTSA Circle, San Antonio, TX 78249\n Contact: 8xx-123-5678\n Email: LetsHelp123456123@gmail.com"
             app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -58,14 +60,15 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <Button
-            android:id="@+id/button3"
-            android:layout_width="93dp"
+            android:id="@+id/btn_event_register"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="36dp"
             android:layout_marginEnd="155dp"
             android:layout_marginStart="155dp"
             android:layout_marginTop="14dp"
-            android:text="Button"
+            android:text="Register Event"
+            android:onClick="RegisterEvent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

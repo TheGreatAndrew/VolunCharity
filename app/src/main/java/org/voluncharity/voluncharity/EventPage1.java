@@ -5,15 +5,25 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import static android.widget.Toast.makeText;
 
 public class EventPage1 extends AppCompatActivity {
 
+
     DrawerLayout drawerLayout;
+
+    Button regiEvent;
+    int flag = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_page1);
         drawerLayout = findViewById(R.id.drawer_layout);
+        regiEvent = (Button) findViewById(R.id.btn_event_register);
+
     }
 
     public void MenuClick(View view){
@@ -39,6 +49,24 @@ public class EventPage1 extends AppCompatActivity {
 
     public void ClickLogout(View view){
         HomePageActivity.logout(this);
+    }
+
+    public void RegisterEvent(View view){
+        int id = view.getId();
+
+        switch (id){
+            case R.id.btn_event_register:
+                if(flag == 0) {
+                    Toast.makeText(this, "You Have Register the Event", Toast.LENGTH_SHORT).show();
+                    regiEvent.setText("Unregister Event");
+                    flag = 1;
+                }
+                else if(flag == 1){
+                    Toast.makeText(this, "You Have UnRegister the Event", Toast.LENGTH_SHORT).show();
+                    regiEvent.setText("Register Event");
+                    flag = 0;
+                }
+        }
     }
 
     @Override

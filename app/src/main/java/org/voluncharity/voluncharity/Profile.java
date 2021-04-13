@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static org.voluncharity.voluncharity.HomePageActivity.directActivity;
 
@@ -63,29 +64,29 @@ public class Profile extends AppCompatActivity {
 
 
     public void NextEventOnClick(View view){
-        System.out.println("In Next Event Button");
+        Toast.makeText(this, "You Have click on Next Event", Toast.LENGTH_SHORT).show();
     }
 
     public void EventHistoryOnClick(View view){
-        System.out.println("In Event History Button");
+        Toast.makeText(this, "You Have click on History", Toast.LENGTH_SHORT).show();;
     }
     public void FavOrgOnClick(View view){
-        System.out.println("In Fav Org. Button");
+        Toast.makeText(this, "You Have click on Favorite", Toast.LENGTH_SHORT).show();
     }
     public void DonationHistoryOnClick(View view){
-        System.out.println("In Donation History Button");
+        Toast.makeText(this, "You Have click on Donation History", Toast.LENGTH_SHORT).show();
     }
 
     public void StoreOnClick(View view){
-        System.out.println("Inside Store Click Button");
+         Toast.makeText(this, "You Have click on Store", Toast.LENGTH_SHORT).show();
     }
 
     public void RewardsOnClick(View view){
-        System.out.println("Inside Rewards Click Button");
+        Toast.makeText(this, "You Have click on Rewards", Toast.LENGTH_SHORT).show();
     }
 
     public void LogoutOnClick(View view){
-        System.out.println("Inside Log out Click Button");
+        //System.out.println("Inside Log out Click Button");
         //directActivity(this,LoginFragment.class);
         HomePageActivity.logout(this);
     }
