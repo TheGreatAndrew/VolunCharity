@@ -57,12 +57,12 @@ public class EventPage1 extends AppCompatActivity {
         switch (id){
             case R.id.btn_event_register:
                 if(flag == 0) {
-                    Toast.makeText(this, "You Have Register the Event", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Registered the Event", Toast.LENGTH_SHORT).show();
                     regiEvent.setText("Unregister Event");
                     flag = 1;
                 }
                 else if(flag == 1){
-                    Toast.makeText(this, "You Have UnRegister the Event", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "UnRegistered the Event", Toast.LENGTH_SHORT).show();
                     regiEvent.setText("Register Event");
                     flag = 0;
                 }
