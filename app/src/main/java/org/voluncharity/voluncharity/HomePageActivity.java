@@ -7,14 +7,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class HomePageActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+    private static Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,7 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         drawerLayout = findViewById(R.id.drawer_layout);
+        mContext = this;
     }
 
    public void MenuClick(View view){
@@ -77,9 +82,9 @@ public class HomePageActivity extends AppCompatActivity {
         builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                activity.finishAffinity();
-
-                System.exit(0);
+//                activity.finishAffinity();
+//                System.exit(0);
+                signOut(mContext);
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -91,7 +96,12 @@ public class HomePageActivity extends AppCompatActivity {
 
         builder.show();
 
+    }
 
+    public static void signOut(Context mContext){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(mContext, LoginFragment.class);
+        mContext.startActivity(intent);
     }
 
     public static void directActivity(Activity activity,Class newClass) {
