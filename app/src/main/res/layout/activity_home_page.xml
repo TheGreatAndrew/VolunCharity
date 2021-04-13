@@ -67,6 +67,7 @@
             android:layout_height="100dp"
             android:layout_marginVertical="320dp"
             android:layout_marginHorizontal="5dp"
+            android:onClick="SanitizerClick"
             android:src="@drawable/ic_sanitizer"/>
 
     </LinearLayout>
@@ -96,6 +97,7 @@
             android:layout_height="100dp"
             android:layout_marginVertical="470dp"
             android:layout_marginHorizontal="5dp"
+            android:onClick="MountainClick"
             android:src="@drawable/ic_mountclimbing"/>
 
     </LinearLayout>

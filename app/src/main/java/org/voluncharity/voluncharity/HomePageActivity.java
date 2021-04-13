@@ -59,6 +59,12 @@ public class HomePageActivity extends AppCompatActivity {
     public void CarWashClick(View view){
         directActivity(this,EventPage1.class);
     }
+    public void SanitizerClick(View view){
+        directActivity(this,EventPage2.class);
+    }
+    public void MountainClick(View view){
+        directActivity(this,EventPage3.class);
+    }
     public void ClickLogout(View view){
         logout(this);
     }

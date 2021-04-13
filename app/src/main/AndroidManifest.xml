@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VolunCharity">
-        <activity android:name=".EventPage1"></activity>
+        <activity android:name=".EventPage3"></activity>
+        <activity android:name=".EventPage2" />
+        <activity android:name=".EventPage1" />
         <activity android:name=".Settings" />
         <activity android:name=".Profile" />
         <activity android:name=".HomePageActivity" />
