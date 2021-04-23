@@ -32,6 +32,10 @@ public class HomePageActivity extends AppCompatActivity {
    public void MenuClick(View view){
        openMenu(drawerLayout);
    }
+    public void MapClick(View view){
+        ClickMapPic(view);
+    }
+
 
     public static void openMenu(DrawerLayout drawerLayout) {
         drawerLayout.openDrawer(GravityCompat.START);
@@ -43,7 +47,6 @@ public class HomePageActivity extends AppCompatActivity {
 
     public static void closeMenu(DrawerLayout drawerLayout) {
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
-
             drawerLayout.closeDrawer(GravityCompat.START);
         }
 
@@ -52,6 +55,10 @@ public class HomePageActivity extends AppCompatActivity {
 
     public void ClickProfilePic(View view){
         directActivity(this,Profile.class);
+    }
+
+    public void ClickMapPic(View view){
+        directActivity(this,MapsActivity.class);
     }
 
     public void ClickProfile(View view){
