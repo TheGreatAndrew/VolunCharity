@@ -281,6 +281,22 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.505" />
 
+        <Button
+            android:id="@+id/achievementID"
+            android:layout_width="133dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="6dp"
+            android:onClick="achievementOnClick"
+            android:text="Achievements"
+            android:textColor="#7C6969"
+            android:textSize="11dp"
+            app:backgroundTint="#00221D1D"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout

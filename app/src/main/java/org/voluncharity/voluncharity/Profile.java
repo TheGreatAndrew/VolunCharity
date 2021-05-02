@@ -17,6 +17,7 @@ public class Profile extends AppCompatActivity {
     TextView NameId;
     Button editProButtonId;
     EditText editNameId;
+    Button achievementID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,11 @@ public class Profile extends AppCompatActivity {
                 this.editNameId.setEnabled(false);
                 this.editNameId.setVisibility(View.INVISIBLE);
         }
+    }
+
+    public void achievementOnClick(View view){
+        Toast.makeText(this, "You Have Achievement on Next Event", Toast.LENGTH_SHORT).show();
+        directActivity(this,Achievement.class);
     }
 
 
