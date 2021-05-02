@@ -107,7 +107,7 @@ public class HomePageActivity extends AppCompatActivity {
 
     public static void signOut(Context mContext){
         FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(mContext, LoginFragment.class);
+        Intent intent = new Intent(mContext, MainActivity.class);
         mContext.startActivity(intent);
     }
 
