@@ -43,7 +43,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng sanAntonio = new LatLng( 29.61195349608321, -98.6132773231262);
         MarkerOptions marker = new MarkerOptions()
                 .position(sanAntonio)
-                .title("Toy Donation");
+                .title("Toys Donation");
         mMap.addMarker(marker);
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng( 29.556, -98.4))
