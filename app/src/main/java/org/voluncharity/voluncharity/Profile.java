@@ -3,6 +3,7 @@ package org.voluncharity.voluncharity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,9 +16,12 @@ import static org.voluncharity.voluncharity.HomePageActivity.directActivity;
 public class Profile extends AppCompatActivity {
     DrawerLayout drawerLayout;
     TextView NameId;
+    TextView tv;
     Button editProButtonId;
     EditText editNameId;
     Button achievementID;
+    int presentPoints;
+    Globals g = Globals.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +33,9 @@ public class Profile extends AppCompatActivity {
         editNameId = (EditText) findViewById(R.id.editNameId);
         NameId= (TextView) findViewById(R.id.NameId);
         editProButtonId = (Button) findViewById(R.id.editProButtonId);
-
+        tv = (TextView) findViewById(R.id.pointTextId);
+        presentPoints = g.getPresentPoints();
+        tv.setText(""+ presentPoints);
     }
     public void MenuClick(View view){
         HomePageActivity.openMenu(drawerLayout);
@@ -117,7 +123,6 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-
         HomePageActivity.closeMenu(drawerLayout);
     }
 

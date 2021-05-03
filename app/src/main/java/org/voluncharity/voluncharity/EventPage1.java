@@ -3,6 +3,7 @@ package org.voluncharity.voluncharity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,20 +12,33 @@ import android.widget.Toast;
 import static android.widget.Toast.makeText;
 
 public class EventPage1 extends AppCompatActivity {
-
-
     DrawerLayout drawerLayout;
 
     Button regiEvent;
     int flag = 0;
+    int presentPoints;
+    Globals g = Globals.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_page1);
         drawerLayout = findViewById(R.id.drawer_layout);
         regiEvent = (Button) findViewById(R.id.btn_event_register);
-
-    }
+        g.setPresentPoints(BuildConfig.VERSION_CODE);
+        /*regiEvent.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                openProfile();
+            }
+        });*/
+        }
+    /*public void openProfile(){
+        Intent intent = new Intent(this, Profile.class);
+        intent.putExtra(INCREAES_POINTS, increase);
+        intent.putExtra(DECREAES_POINTS, decrease);
+        startActivity(intent);
+    }*/
 
     public void MenuClick(View view){
         HomePageActivity.openMenu(drawerLayout);
@@ -57,14 +71,20 @@ public class EventPage1 extends AppCompatActivity {
         switch (id){
             case R.id.btn_event_register:
                 if(flag == 0) {
-                    Toast.makeText(this, "Registered the Event", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Registered the Event +10 points", Toast.LENGTH_SHORT).show();
                     regiEvent.setText("Unregister Event");
                     flag = 1;
+                    presentPoints = g.getPresentPoints();
+                    presentPoints = presentPoints + 10;
+                    g.setPresentPoints(presentPoints);
                 }
-                else if(flag == 1){
-                    Toast.makeText(this, "UnRegistered the Event", Toast.LENGTH_SHORT).show();
+                else if (flag == 1){
+                    Toast.makeText(this, "UnRegistered the Event -10 points", Toast.LENGTH_SHORT).show();
                     regiEvent.setText("Register Event");
                     flag = 0;
+                    presentPoints = g.getPresentPoints();
+                    presentPoints = presentPoints - 10;
+                    g.setPresentPoints(presentPoints);
                 }
         }
     }
