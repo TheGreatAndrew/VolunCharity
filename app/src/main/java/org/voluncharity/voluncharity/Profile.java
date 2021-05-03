@@ -74,7 +74,7 @@ public class Profile extends AppCompatActivity {
     }
 
     public void EventHistoryOnClick(View view){
-        Toast.makeText(this, "You Have click on History", Toast.LENGTH_SHORT).show();;
+        directActivity(this,EventHistory.class);
     }
     public void FavOrgOnClick(View view){
         Toast.makeText(this, "You Have click on Favorite", Toast.LENGTH_SHORT).show();
