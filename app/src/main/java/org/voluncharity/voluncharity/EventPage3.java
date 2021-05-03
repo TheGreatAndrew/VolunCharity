@@ -13,12 +13,15 @@ public class EventPage3 extends AppCompatActivity {
 
     Button regiEvent;
     int flag = 0;
+    int presentPoints;
+    Globals g = Globals.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_page3);
         drawerLayout = findViewById(R.id.drawer_layout);
         regiEvent = (Button) findViewById(R.id.btn_event_register);
+        g.setPresentPoints(BuildConfig.VERSION_CODE);
     }
 
     public void MenuClick(View view){
@@ -55,11 +58,17 @@ public class EventPage3 extends AppCompatActivity {
                     Toast.makeText(this, "Registered the Event +10 points", Toast.LENGTH_SHORT).show();
                     regiEvent.setText("Unregister Event");
                     flag = 1;
+                    presentPoints = g.getPresentPoints();
+                    presentPoints = presentPoints + 10;
+                    g.setPresentPoints(presentPoints);
                 }
-                else if(flag == 1){
+                else if (flag == 1){
                     Toast.makeText(this, "UnRegistered the Event -10 points", Toast.LENGTH_SHORT).show();
                     regiEvent.setText("Register Event");
                     flag = 0;
+                    presentPoints = g.getPresentPoints();
+                    presentPoints = presentPoints - 10;
+                    g.setPresentPoints(presentPoints);
                 }
         }
     }

@@ -20,7 +20,8 @@ public class Profile extends AppCompatActivity {
     Button editProButtonId;
     EditText editNameId;
     Button achievementID;
-    int presentPoints = 0;
+    int presentPoints;
+    Globals g = Globals.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class Profile extends AppCompatActivity {
         NameId= (TextView) findViewById(R.id.NameId);
         editProButtonId = (Button) findViewById(R.id.editProButtonId);
         tv = (TextView) findViewById(R.id.pointTextId);
+        presentPoints = g.getPresentPoints();
         tv.setText(""+ presentPoints);
     }
     public void MenuClick(View view){
